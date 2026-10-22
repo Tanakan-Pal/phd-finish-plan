@@ -1,0 +1,234 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,-apple-system,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>PhD Finish Plan</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style id="pagecss">
+/* Layout: single reading column, lab-notebook rhythm; every block renders from saved page state and turns editable in edit mode. Works on claude.ai (saves the page) and on GitHub Pages or a local file (saves in the browser, downloads an updated copy). */
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --fg:#17202b; --muted:#5a6675; --line:#dde2e8;
+  --accent:#1f4e8c; --accent-soft:#e6eef8; --on-accent:#ffffff; --ca:#b46a00; --ca-soft:#fbf0dc;
+  --ok:#2f7a4b; --ok-soft:#e3f2e8; --todo:#9a3b2e; --todo-soft:#f8e6e2; --gate:#5b4b9a; --gate-soft:#ece8f7;
+  --scene:#eef3ee; --c2a:#3d78c7; --c2b:#2a9d8f; --vwa:#8a6bc4;
+  --display:"Fraunces", Georgia, serif; --body:"IBM Plex Sans", system-ui, sans-serif; --mono:"IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f141b; --surface:#161d26; --fg:#e4e9ef; --muted:#9aa6b4; --line:#2a3440;
+  --accent:#8db4ea; --accent-soft:#1b2a3d; --on-accent:#0f141b; --ca:#f0b04a; --ca-soft:#3a2b12;
+  --ok:#7cc797; --ok-soft:#173023; --todo:#f09a8a; --todo-soft:#3a1d18; --gate:#b9a8f0; --gate-soft:#262040;
+  --scene:#1b2420; --c2a:#6fa0e0; --c2b:#4fc0b2; --vwa:#ab90e0; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f141b; --surface:#161d26; --fg:#e4e9ef; --muted:#9aa6b4; --line:#2a3440;
+  --accent:#8db4ea; --accent-soft:#1b2a3d; --on-accent:#0f141b; --ca:#f0b04a; --ca-soft:#3a2b12;
+  --ok:#7cc797; --ok-soft:#173023; --todo:#f09a8a; --todo-soft:#3a1d18; --gate:#b9a8f0; --gate-soft:#262040;
+  --scene:#1b2420; --c2a:#6fa0e0; --c2b:#4fc0b2; --vwa:#ab90e0; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.6 var(--body);margin:0}
+.wrap{max-width:900px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:44px}
+h1,h2{font-family:var(--display);font-weight:650;text-wrap:balance;margin:0}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.1}
+h2{font-size:22px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+section{display:flex;flex-direction:column;gap:14px}
+p{margin:0;max-width:68ch}
+.muted{color:var(--muted)}
+.note{font-size:12.5px;color:var(--muted)}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.btn{font:500 13px var(--body);padding:7px 12px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.btn.small{padding:3px 8px;font-size:12px}
+.del{font:500 13px/1 var(--body);border:1px solid var(--line);background:var(--surface);color:var(--todo);border-radius:6px;width:24px;height:24px;cursor:pointer;flex:none}
+.add{align-self:flex-start}
+#saveMsg{font-size:12.5px;color:var(--muted)}
+.savebar{position:sticky;bottom:calc(12px + env(safe-area-inset-bottom,0px));display:flex;gap:10px;align-items:center;justify-content:flex-end;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;z-index:5}
+[contenteditable="true"]{outline:1px dashed var(--accent);outline-offset:2px;border-radius:3px;min-width:2ch;display:inline-block}
+[contenteditable="true"]:focus{outline-style:solid;background:var(--accent-soft)}
+select{font:13px var(--body);padding:3px 6px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--fg)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:2px;position:relative}
+.fact b{font:600 17px/1.3 var(--body)}
+.fact span{font-size:12.5px;color:var(--muted)}
+.fact .del{position:absolute;top:8px;right:8px}
+.claim{border-left:3px solid var(--accent);padding:4px 0 4px 16px;font-family:var(--display);font-size:19px;line-height:1.45;font-weight:500;max-width:62ch}
+.mapbox{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;overflow-x:auto}
+.mapbox svg{display:block;min-width:560px;width:100%;height:auto}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--muted);margin-top:10px}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:500 11.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td.fig{font:500 13px var(--mono)}
+.pill{display:inline-block;font:500 11.5px/1 var(--mono);padding:4px 8px;border-radius:99px}
+.have{background:var(--ok-soft);color:var(--ok)}
+.todo{background:var(--todo-soft);color:var(--todo)}
+.part{background:var(--ca-soft);color:var(--ca)}
+.gate{background:var(--gate-soft);color:var(--gate)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.list{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.list h3{margin:0 0 2px;font:600 14px var(--body);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.item{display:flex;gap:10px;align-items:flex-start;font-size:14px}
+.item input[type=checkbox]{margin-top:4px;accent-color:var(--accent);width:16px;height:16px;flex:none}
+.item .txt{flex:1;min-width:0}
+.item.done .t1{color:var(--muted);text-decoration:line-through}
+.item small{display:block;color:var(--muted);font-size:12.5px}
+.timeline{display:flex;flex-direction:column;border-left:2px solid var(--line);margin-left:6px}
+.tl{position:relative;padding:0 0 18px 22px;display:grid;grid-template-columns:120px 1fr auto;gap:4px 16px}
+.tl::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--accent)}
+.tl.k-key::before{background:var(--accent)}
+.tl.k-gate::before{border-color:var(--gate);background:var(--gate)}
+.tl.k-key .tx,.tl.k-gate .tx{font-weight:600}
+.tl time{font:500 13px/1.5 var(--mono);color:var(--muted)}
+@media (max-width:520px){.tl{grid-template-columns:1fr}}
+.ladder{display:flex;flex-direction:column;gap:8px}
+.rung{display:grid;grid-template-columns:28px 1fr auto auto;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 14px}
+.rung .n{font:500 13px var(--mono);color:var(--muted)}
+.rung .if{font:500 13px var(--mono);font-variant-numeric:tabular-nums;color:var(--accent)}
+.rung small{display:block;color:var(--muted);font-size:12.5px}
+.mv{display:flex;flex-direction:column;gap:2px}
+footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.prog{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:20px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+@media (max-width:620px){.prog{grid-template-columns:1fr}}
+.prog svg{width:100%;height:auto;display:block;border-radius:8px;background:var(--scene)}
+.prog .big{font:650 28px/1.1 var(--display)}
+.bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);transition:width .4s}
+.stages{display:flex;flex-wrap:wrap;gap:6px}
+.stages span{font:500 11.5px/1 var(--mono);padding:5px 8px;border-radius:99px;background:var(--bg);color:var(--muted);border:1px solid var(--line)}
+.stages span.on{background:var(--ca-soft);color:var(--ca);border-color:transparent}
+@keyframes drop{from{transform:translateY(-26px);opacity:0}to{transform:none;opacity:1}}
+.rel ellipse,.rel circle{animation:drop .9s ease-out both}
+@media (prefers-reduced-motion:reduce){.rel ellipse,.rel circle{animation:none}.bar i{transition:none}}
+</style>
+<div class="wrap" id="root"></div>
+<script id="state" type="application/json">{"header": {"eyebrow": "PhD finish plan · [Lab] · [University]", "title": "[Project name]: thesis and paper plan", "intro": "[Two or three sentences: what the thesis covers, which paper comes out of it, and what sets the pace, such as a publication requirement for graduation.]", "facts": [{"label": "Paper submit", "value": "[Month Year]", "sub": "[hard limit]"}, {"label": "Decision gate", "value": "[Date]", "sub": "[what gets decided]"}, {"label": "Thesis to committee", "value": "[Month Year]", "sub": "[draft to advisor]"}, {"label": "Defense", "value": "[Month Year]", "sub": "[graduation condition]"}]}, "claim": {"text": "[One sentence that states what your work shows.]", "title": "[Working title of the paper]"}, "sec": {"results": "Results chapter, and what goes into the paper", "resultsNote": "The thesis keeps every result. The paper takes the main figures its journal allows; the rest goes to the supplement or stays in the thesis.", "chapters": "Writing plan", "files": "[Where your thesis and manuscript files live.]", "tasks": "What gets done next", "out": "Out of scope: [experiments or analyses you decided not to do, and why].", "timeline": "Experiments, paper and thesis together", "journals": "Where to send the paper, in order", "journalNote": "Check impact factors and quartiles in Web of Science or Scopus, and the graduation requirements of your graduate school."}, "results": [{"thesis": "4.1 · Fig 4.1", "finding": "[Finding stated as a sentence]", "data": "[Method, readout]", "paper": "Fig 1", "status": "have", "kind": "have"}, {"thesis": "4.2 · Fig 4.2", "finding": "[Finding stated as a sentence]", "data": "[Method, readout]", "paper": "Fig 2", "status": "partial", "kind": "part"}, {"thesis": "4.3 · Fig 4.3", "finding": "[Finding stated as a sentence]", "data": "[Method, readout]", "paper": "Fig 3", "status": "to do", "kind": "todo"}, {"thesis": "4.4 · Fig 4.4", "finding": "[Thesis-only result]", "data": "[Method, readout]", "paper": "Supp or —", "status": "have", "kind": "have"}, {"thesis": "4.5 · Fig 4.5", "finding": "[Optional result]", "data": "[Method, readout]", "paper": "Fig 4?", "status": "decide [date]", "kind": "gate"}], "chapters": [{"part": "Abstract", "contents": "English and local-language abstract; keywords", "write": "Last", "paper": "Summary"}, {"part": "Ch 1", "contents": "Background, problem, questions, objectives, scope, overview", "write": "[When]", "paper": "Introduction (gap and aims)"}, {"part": "Ch 2", "contents": "Literature review", "write": "Start now", "paper": "Introduction (background)"}, {"part": "Ch 3", "contents": "Materials and methods, key resources, statistics, data availability", "write": "As experiments close", "paper": "Methods, condensed"}, {"part": "Ch 4", "contents": "Results with figure legends", "write": "[When]", "paper": "Results"}, {"part": "Ch 5", "contents": "Discussion, limitations, future work", "write": "[When]", "paper": "Discussion"}, {"part": "Ch 6", "contents": "Conclusion and key findings", "write": "[When]", "paper": "Highlights"}, {"part": "Appendix", "contents": "Protocols, supplementary figures, scripts, publications", "write": "Ongoing", "paper": "Supplemental information"}], "tasks": [{"tag": "experiments", "kind": "todo", "title": "Needed for any journal", "items": [{"id": "e1", "text": "[Key control experiment]", "note": "[Why it matters, how long]", "done": false}, {"id": "e2", "text": "[Missing replicate or condition]", "note": "", "done": false}, {"id": "e3", "text": "Agree storyline and figure list with advisor", "note": "[By when]", "done": false}]}, {"tag": "analysis", "kind": "part", "title": "Lifts the paper", "items": [{"id": "a1", "text": "[Analysis that broadens the story]", "note": "", "done": false}, {"id": "a2", "text": "[Quantification still to run]", "note": "", "done": false}]}, {"tag": "writing", "kind": "have", "title": "Start now", "items": [{"id": "w1", "text": "Fill the key resources table", "note": "Reagents, constructs, cells, software with identifiers", "done": false}, {"id": "w2", "text": "Write methods for finished experiments", "note": "", "done": false}, {"id": "w3", "text": "Literature review in weekly slices", "note": "", "done": false}]}], "timeline": [{"when": "[Month]", "text": "[Experiments and analysis this month]", "kind": "normal"}, {"when": "[Date]", "text": "Decision gate: [what you decide and the criteria].", "kind": "gate"}, {"when": "[Month]", "text": "Final figures and legends; results chapter.", "kind": "normal"}, {"when": "[Month]", "text": "Draft to advisor; condense into the paper.", "kind": "normal"}, {"when": "[Month]", "text": "Paper submitted.", "kind": "key"}, {"when": "[Month]", "text": "Thesis to committee.", "kind": "normal"}, {"when": "[Month]", "text": "Defense.", "kind": "key"}], "journals": [{"name": "[First-choice journal]", "note": "[What it needs that your story has]", "metric": "IF —"}, {"name": "[Second choice]", "note": "[Why it fits]", "metric": "IF —"}, {"name": "[Third choice]", "note": "[Why it fits]", "metric": "IF —"}], "condense": {"title": "Condensing for the first-choice journal", "items": [{"id": "p1", "text": "Main text within the word limit", "note": "", "done": false}, {"id": "p2", "text": "Main figures within the limit; rest to supplement", "note": "", "done": false}, {"id": "p3", "text": "Abstract or summary within its limit; highlights if required", "note": "", "done": false}, {"id": "p4", "text": "Methods, key resources, data and code availability", "note": "", "done": false}, {"id": "p5", "text": "Cover letter and suggested reviewers", "note": "", "done": false}]}, "risks": [{"title": "[A result that may not work]", "text": "[What you do if it fails.]"}, {"title": "Rejected after review", "text": "Have the next journal's version formatted before submitting."}, {"title": "Thesis writing squeezed", "text": "Start literature review and methods early."}], "footer": "PhD Finish Plan template. Click Edit page to change anything.", "saved": ""}</script>
+<script id="app">
+(function(){
+var S=JSON.parse(document.getElementById('state').textContent);
+var editing=false, art=null, readOnly=false, saveTimer=null, LKEY='phdplan-state-v1', localEdits=false;
+var EMBED=document.getElementById('state').textContent;
+var mode=(window.claude&&window.claude.use)?'claude':'local';
+if(mode==='local'){try{var ls=localStorage.getItem(LKEY);if(ls){S=JSON.parse(ls);localEdits=true;}}catch(e){}}
+var BASE=JSON.stringify(S), dl=null;
+var KINDS={have:'have',todo:'to do',part:'partial',gate:'decide'};
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function E(p,v,tag,cls){tag=tag||'span';return '<'+tag+(cls?' class="'+cls+'"':'')+(editing?' contenteditable="true" data-p="'+p+'"':'')+'>'+esc(v)+'</'+tag+'>';}
+function getP(p){return p.split('.').reduce(function(o,k){return o[k];},S);}
+function setP(p,v){var ks=p.split('.'),o=S;for(var i=0;i<ks.length-1;i++)o=o[ks[i]];o[ks[ks.length-1]]=v;}
+function del(p){return editing?'<button class="del" type="button" data-del="'+p+'" aria-label="Remove">×</button>':'';}
+function add(p,label){return editing?'<button class="btn small add" type="button" data-add="'+p+'">+ '+label+'</button>':'';}
+function kindSel(p,v,opts){if(!editing)return '';return '<select data-k="'+p+'">'+Object.keys(opts).map(function(k){return '<option value="'+k+'"'+(k===v?' selected':'')+'>'+opts[k]+'</option>';}).join('')+'</select>';}
+function mv(p,i,n){if(!editing)return '';return '<span class="mv"><button class="btn small" type="button" data-up="'+p+'.'+i+'"'+(i===0?' hidden':'')+' aria-label="Move up">↑</button></span>';}
+
+var TEMPL={'header.facts':{label:'Label',value:'Value',sub:'Detail'},results:{thesis:'4.x',finding:'New finding',data:'Data',paper:'—',status:'to do',kind:'todo'},chapters:{part:'New',contents:'Contents',write:'When',paper:'Paper part'},tasks:{tag:'new',kind:'part',title:'New group',items:[]},timeline:{when:'Month',text:'What happens',kind:'normal'},journals:{name:'Journal name',note:'Why this one',metric:'IF'},risks:{title:'Risk',text:'What to do'},'condense.items':{text:'New item',note:'',done:false}};
+function itemT(){return {id:'i'+Date.now().toString(36),text:'New task',note:'',done:false};}
+
+function allItems(){var a=[];S.tasks.forEach(function(g){g.items.forEach(function(it){a.push(it);});});S.condense.items.forEach(function(it){a.push(it);});return a;}
+
+/* vesicle scene */
+var STG=[[20,'Stage 1'],[40,'Stage 2'],[60,'Stage 3'],[80,'Stage 4'],[100,'Fusion']];
+var COL=['#ed93b1','#afa9ec','#f0997b','#5dcaa5','#f4c0d1'];
+function flower(x,y,s,c){var h='';for(var k=0;k<5;k++){var a=k*1.2566-1.5708,cx=(x+Math.cos(a)*s*0.55).toFixed(1),cy=(y+Math.sin(a)*s*0.55).toFixed(1);h+='<ellipse cx="'+cx+'" cy="'+cy+'" rx="'+(s*0.42).toFixed(1)+'" ry="'+(s*0.3).toFixed(1)+'" transform="rotate('+(a*57.3).toFixed(0)+' '+cx+' '+cy+')" fill="'+c+'"/>';}return h+'<circle cx="'+x+'" cy="'+y+'" r="'+(s*0.28)+'" fill="#fac775"/>';}
+function star(x,y,s){var pts=[];for(var k=0;k<10;k++){var a=k*0.6283-1.5708,r=k%2?s*0.45:s;pts.push((x+Math.cos(a)*r).toFixed(1)+','+(y+Math.sin(a)*r).toFixed(1));}return '<polygon points="'+pts.join(' ')+'" fill="#ef9f27" stroke="#854f0b" stroke-width="0.8"/><text x="'+x+'" y="'+(y+2.5)+'" text-anchor="middle" style="font:500 6px sans-serif;fill:#412402">Ca</text>';}
+function scene(p){
+  var t=p/100,h='',fused=p>=100,vy=30+Math.min(1,t/0.85)*92;
+  h+='<rect x="0" y="150" width="240" height="10" fill="#e6c27a"/><rect x="0" y="160" width="240" height="10" fill="#d6a95a"/>';
+  if(t>0.6&&!fused){var s=Math.min(1,(t-0.6)/0.3);for(var i=-1;i<=1;i+=2){var x=120+i*14,d='M'+x+' '+(vy+22);for(var j=1;j<=6;j++){d+=' L'+(x+(j%2?5:-5)*s)+' '+(vy+22+(150-vy-22)*j/6);}h+='<path d="'+d+'" fill="none" stroke="#7f77dd" stroke-width="2"/>';}}
+  if(!fused){h+='<circle cx="120" cy="'+vy+'" r="24" fill="#fff" stroke="#378add" stroke-width="3"/>';[[0,0],[-11,-8],[11,-8],[-11,9],[11,9],[0,-14],[0,14]].forEach(function(o,i){h+=flower(120+o[0],vy+o[1],5,COL[i%5]);});}
+  else{h+='<path d="M94 150 Q98 128 120 128 Q142 128 146 150" fill="none" stroke="#378add" stroke-width="3"/><rect x="108" y="148" width="24" height="24" style="fill:var(--scene)"/><g class="rel">';
+    [[-60,186,7],[-34,196,6],[-10,184,8],[14,198,6],[38,186,7],[62,196,6],[-44,177,5],[26,177,5],[0,203,5],[84,186,6],[-82,196,5]].forEach(function(o,i){h+=flower(120+o[0],o[1],o[2],COL[i%5]);});h+='</g>';}
+  var n=STG.filter(function(m){return p>=m[0];}).length,sp=[[30,40],[205,48],[22,108],[214,112],[68,128]];
+  for(var k=0;k<n;k++)h+=star(sp[k][0],sp[k][1],10);
+  return {svg:h,n:n};
+}
+function progress(){var a=allItems(),d=a.filter(function(x){return x.done;}).length;return {done:d,total:a.length,p:a.length?Math.round(d/a.length*100):0};}
+
+function tb(){if(editing)return '';var b='<span style="display:flex;gap:8px;flex-wrap:wrap">';if(readOnly)b+='<span class="note">View only</span>';else b+='<button class="btn" type="button" id="editBtn">Edit page</button>';if(mode==='local'||dl){b+='<button class="btn" type="button" id="dlBtn">Download page</button>';}if(mode==='local'){if(localEdits)b+='<button class="btn" type="button" id="resetBtn">Discard browser edits</button>';}return b+'</span>';}
+function itemHTML(it,p){
+  return '<div class="item'+(it.done?' done':'')+'"><input type="checkbox" data-tick="'+p+'"'+(it.done?' checked':'')+' aria-label="Done"><div class="txt">'+E(p+'.text',it.text,'span','t1')+(it.note||editing?'<small>'+E(p+'.note',it.note)+'</small>':'')+'</div>'+del(p)+'</div>';
+}
+
+function render(){
+  var h=S.header,pr=progress(),sc=scene(pr.p),out='';
+  out+='<header style="display:flex;flex-direction:column;gap:14px"><div class="topbar">'+E('header.eyebrow',h.eyebrow,'span','eyebrow')+tb()+'</div>';
+  out+=E('header.title',h.title,'h1')+E('header.intro',h.intro,'p','muted');
+  out+='<div class="facts">'+h.facts.map(function(f,i){var p='header.facts.'+i;return '<div class="fact">'+E(p+'.label',f.label)+E(p+'.value',f.value,'b')+E(p+'.sub',f.sub)+del(p)+'</div>';}).join('')+'</div>'+add('header.facts','Add fact')+'</header>';
+
+  out+='<section><span class="eyebrow">Progress</span><div class="prog"><svg viewBox="0 0 240 210" role="img" aria-label="Vesicle fusion progress: '+pr.p+' percent, '+sc.n+' calcium stars">'+sc.svg+'</svg><div style="display:flex;flex-direction:column;gap:12px;min-width:0"><div class="big">'+pr.p+'%</div><div class="bar"><i style="width:'+pr.p+'%"></i></div><p class="muted">'+pr.done+' of '+pr.total+' tasks done · Ca²⁺ '+sc.n+'/5'+(pr.p>=100?' · Fused':'')+'</p><div class="stages">'+STG.map(function(m){return '<span class="'+(pr.p>=m[0]?'on':'')+'">'+m[1]+' · '+m[0]+'%</span>';}).join('')+'</div><p class="note">Each Ca²⁺ star marks a stage reached. When every task is ticked, the vesicle fuses and releases its flowers.</p></div></div></section>';
+
+  out+='<section><span class="eyebrow">The claim</span>'+E('claim.text',S.claim.text,'p','claim')+'<p class="muted">Working title: '+E('claim.title',S.claim.title,'i')+'</p></section>';
+
+
+  out+='<section><span class="eyebrow">Results and figures</span>'+E('sec.results',S.sec.results,'h2')+E('sec.resultsNote',S.sec.resultsNote,'p','note')+'<div class="tbl"><table><thead><tr><th>Thesis</th><th>Finding</th><th>Data</th><th>Paper</th><th>Status</th>'+(editing?'<th></th>':'')+'</tr></thead><tbody>'+S.results.map(function(r,i){var p='results.'+i;return '<tr><td class="fig">'+E(p+'.thesis',r.thesis)+'</td><td>'+E(p+'.finding',r.finding)+'</td><td>'+E(p+'.data',r.data)+'</td><td class="fig">'+E(p+'.paper',r.paper)+'</td><td><span class="pill '+r.kind+'">'+E(p+'.status',r.status)+'</span> '+kindSel(p+'.kind',r.kind,KINDS)+'</td>'+(editing?'<td>'+mv('results',i)+del(p)+'</td>':'')+'</tr>';}).join('')+'</tbody></table></div>'+add('results','Add row')+'</section>';
+
+  out+='<section><span class="eyebrow">Thesis chapters</span>'+E('sec.chapters',S.sec.chapters,'h2')+'<div class="tbl"><table><thead><tr><th>Part</th><th>Contents</th><th>Write</th><th>Paper gets</th>'+(editing?'<th></th>':'')+'</tr></thead><tbody>'+S.chapters.map(function(r,i){var p='chapters.'+i;return '<tr><td class="fig">'+E(p+'.part',r.part)+'</td><td>'+E(p+'.contents',r.contents)+'</td><td>'+E(p+'.write',r.write)+'</td><td>'+E(p+'.paper',r.paper)+'</td>'+(editing?'<td>'+mv('chapters',i)+del(p)+'</td>':'')+'</tr>';}).join('')+'</tbody></table></div>'+add('chapters','Add row')+E('sec.files',S.sec.files,'p','note')+'</section>';
+
+  out+='<section><span class="eyebrow">Remaining work</span>'+E('sec.tasks',S.sec.tasks,'h2')+'<p class="note">'+(mode==='claude'?'Ticks save to the page, so progress is the same on every device.':'Ticks and edits save in this browser. Use Download page to keep them in your repository.')+'</p><div class="cols">'+S.tasks.map(function(g,gi){var p='tasks.'+gi;return '<div class="list"><h3><span class="pill '+g.kind+'">'+E(p+'.tag',g.tag)+'</span>'+E(p+'.title',g.title)+kindSel(p+'.kind',g.kind,KINDS)+del(p)+'</h3>'+g.items.map(function(it,ii){return itemHTML(it,p+'.items.'+ii);}).join('')+(editing?'<button class="btn small add" type="button" data-additem="'+p+'.items">+ Add task</button>':'')+'</div>';}).join('')+'</div>'+add('tasks','Add group')+E('sec.out',S.sec.out,'p','note')+'</section>';
+
+  out+='<section><span class="eyebrow">Timeline</span>'+E('sec.timeline',S.sec.timeline,'h2')+'<div class="timeline">'+S.timeline.map(function(r,i){var p='timeline.'+i;return '<div class="tl k-'+r.kind+'">'+E(p+'.when',r.when,'time')+E(p+'.text',r.text,'div','tx')+'<div style="display:flex;gap:6px;align-items:start">'+kindSel(p+'.kind',r.kind,{normal:'normal',key:'milestone',gate:'decision'})+mv('timeline',i)+del(p)+'</div></div>';}).join('')+'</div>'+add('timeline','Add entry')+'</section>';
+
+  out+='<section><span class="eyebrow">Journal ladder</span>'+E('sec.journals',S.sec.journals,'h2')+'<div class="ladder">'+S.journals.map(function(j,i){var p='journals.'+i;return '<div class="rung"><span class="n">'+(i+1)+'</span><div>'+E(p+'.name',j.name)+'<small>'+E(p+'.note',j.note)+'</small></div>'+E(p+'.metric',j.metric,'span','if')+'<span style="display:flex;gap:6px">'+mv('journals',i)+del(p)+'</span></div>';}).join('')+'</div>'+add('journals','Add journal')+E('sec.journalNote',S.sec.journalNote,'p','note')+'</section>';
+
+  out+='<section><span class="eyebrow">Submission package</span>'+E('condense.title',S.condense.title,'h2')+'<div class="list">'+S.condense.items.map(function(it,i){return itemHTML(it,'condense.items.'+i);}).join('')+(editing?'<button class="btn small add" type="button" data-additem="condense.items">+ Add item</button>':'')+'</div></section>';
+
+  out+='<section><span class="eyebrow">Risks</span><div class="cols">'+S.risks.map(function(r,i){var p='risks.'+i;return '<div class="list"><h3>'+E(p+'.title',r.title)+del(p)+'</h3>'+E(p+'.text',r.text,'p','muted')+'</div>';}).join('')+'</div>'+add('risks','Add risk')+'</section>';
+
+  out+='<footer>'+E('footer',S.footer,'span')+(S.saved?' · Last saved '+esc(S.saved):'')+'</footer>';
+  if(editing)out+='<div class="savebar"><span id="saveMsg">Editing. Click any text to change it.</span><button class="btn" type="button" id="cancelBtn">Cancel</button><button class="btn primary" type="button" id="saveBtn">Save changes</button></div>';
+  else out+='<div id="saveMsg" aria-live="polite"></div>';
+  document.getElementById('root').innerHTML=out;
+}
+
+function collect(){document.querySelectorAll('[data-p]').forEach(function(el){setP(el.getAttribute('data-p'),el.innerText.replace(/\n+$/,'').trim());});document.querySelectorAll('[data-k]').forEach(function(el){setP(el.getAttribute('data-k'),el.value);});}
+function msg(t){var m=document.getElementById('saveMsg');if(m)m.textContent=t;}
+
+function buildDoc(){
+  var reset=(document.head.querySelector('style')||{}).textContent||'';
+  var st=JSON.stringify(S).replace(/</g,'\\u003c');
+  var parts=document.getElementById('pagecss').outerHTML;
+  var app=document.getElementById('app').outerHTML;
+  return '<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>'+reset+'</style></head><body>'+
+    '<title>PhD Finish Plan</title>\n<meta name="claude:viewport-fit-sides" content="cover">\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">\n'+
+    parts+'\n<div class="wrap" id="root"></div>\n<script id="state" type="application/json">'+st+'<\/script>\n'+app+'</body></html>';
+}
+function publish(){
+  if(mode==='local'){var d0=new Date();S.saved=d0.toLocaleString('en-GB',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'});try{localStorage.setItem(LKEY,JSON.stringify(S));localEdits=true;BASE=JSON.stringify(S);render();msg('Saved in this browser. Download page to keep it in your repository.');}catch(e){msg('This browser blocked saving. Download page to keep your edits.');}return;}
+  if(!art){msg('Saving isn’t available in this view.');return;}
+  var d=new Date();S.saved=d.toLocaleString('en-GB',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'});
+  msg('Saving…');
+  art.publish(buildDoc()).then(function(){msg('Saved');},function(e){
+    var c=e&&e.code;
+    if(c==='conflict')msg('A newer version was saved elsewhere; loading it.');
+    else if(c==='not_writer'||c==='not_granted'||c==='consent_required'||c==='capability_disabled'||c==='not_declared'){readOnly=true;editing=false;render();msg('This view is read-only.');}
+    else if(c==='rate_limited')msg('Saving too often. Wait a moment, then save again.');
+    else msg('Couldn’t save. Try again in a moment.');
+  });
+}
+
+document.getElementById('root').addEventListener('click',function(e){
+  var t=e.target.closest('button');if(!t)return;
+  if(t.id==='editBtn'){editing=true;render();return;}
+  if(t.id==='cancelBtn'){S=JSON.parse(BASE);editing=false;render();return;}
+  if(t.id==='dlBtn'&&dl){dl.save({filename:'index.html',data:buildDoc()}).then(function(r){msg(r&&r.status==='saved'?'Downloaded index.html.':'');},function(e){if(e&&e.code==='unavailable'){dl=null;render();}else msg('The download didn’t go through.');});return;}
+  if(t.id==='dlBtn'){var blob=new Blob([buildDoc()],{type:'text/html'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='index.html';document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},500);msg('Downloaded index.html. Replace the file in your repository with it.');return;}
+  if(t.id==='resetBtn'){try{localStorage.removeItem(LKEY);}catch(e){}S=JSON.parse(EMBED);BASE=EMBED;localEdits=false;render();msg('Showing the version stored in the file.');return;}
+  if(t.id==='saveBtn'){collect();editing=false;render();publish();return;}
+  collect();
+  if(t.dataset.add){var arr=getP(t.dataset.add);var tp=JSON.parse(JSON.stringify(TEMPL[t.dataset.add]));arr.push(tp);}
+  else if(t.dataset.additem){getP(t.dataset.additem).push(itemT());}
+  else if(t.dataset.del){var ks=t.dataset.del.split('.'),idx=+ks.pop();getP(ks.join('.')).splice(idx,1);}
+  else if(t.dataset.up){var u=t.dataset.up.split('.'),i=+u.pop(),a=getP(u.join('.'));if(i>0){var x=a[i];a[i]=a[i-1];a[i-1]=x;}}
+  render();
+});
+document.getElementById('root').addEventListener('change',function(e){
+  var t=e.target;
+  if(t.dataset.tick){if(editing)collect();setP(t.dataset.tick+'.done',t.checked);render();
+    if(!editing&&!readOnly){msg('Saving…');clearTimeout(saveTimer);saveTimer=setTimeout(publish,1500);}}
+  else if(t.dataset.k&&editing){collect();render();}
+});
+
+render();
+if(mode==='claude'){window.claude.use('downloads').then(function(d){if(d){dl=d;render();}},function(){});window.claude.use('artifact').then(function(a){art=a;if(!a){readOnly=true;render();}},function(){readOnly=true;render();});}
+})();
+</script>
+</body></html>
